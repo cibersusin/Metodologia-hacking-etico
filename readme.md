@@ -306,7 +306,7 @@ echo PATH
 #Detectamos ficheros que tienen permiso de escritura
 find / -writable 2>/dev/null | grep -vE "python3.10|proc"
 
-#Generamos una cotnraseña 
+#Generamos una contraseña
 openssl passwd
 
 #Lo pegamos en el passwd (cambiando la contraseña)
@@ -340,14 +340,14 @@ python3 -m http.server 80    #VICTIMA
 
 #### Port-forwarding local
 ```shell
-# 1. Conexión desde Kali a VICTIMA por SSH
+# 1. Conexión desde Kali a PrimeraVictima por SSH
 ssh miuser@10.10.3.102
 
-# 2. Creamos un tunel en KYOTO para que todo lo que entre por aquí se vaya al InternalServer
+# 2. Creamos un tunel en PrimeraVictima  para que todo lo que entre por aquí se vaya a la SegundaMaquina
 ssh -L 0.0.0.4455:172.0.1.102:80 miuser@localhost
 
 ### PRUEBAS: El resultado de hacer debe ser lo mismo
-curl http://172.0.1.102:80  # VICTIMA
+curl http://172.0.1.102:80  # SegundaMaquina
 curl http://10.0.3.102:4455 # KALI
 ```
 
